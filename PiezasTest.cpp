@@ -32,9 +32,26 @@ TEST(PiezasTest, blank_test){
 		ASSERT_EQ(board.pieceAt(i,j), Blank);
 	}
 }
-
+//Test singular X
 TEST(PiezasTest, drop_X){
 	Piezas board;
 	Piece ret = board.dropPiece(0);
   	ASSERT_EQ(ret, X);
 }
+//Test singular O
+TEST(PiezasTest, drop_O){
+	Piezas board;
+	Piece ret = board.dropPiece(0);
+  	ASSERT_EQ(ret, O);
+}
+//Test reset of the 
+TEST(PiezasTest, drop_O_X_reset){
+	Piezas board;
+	Piece ret = board.dropPiece(0);
+  	ret = board.dropPiece(1);
+  	board.reset;
+  	fot(j, i){
+  		ASSERT_EQ(board.pieceAt(i,j), Blank);
+  	}
+}
+
