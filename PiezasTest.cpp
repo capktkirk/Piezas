@@ -58,3 +58,13 @@ TEST(PiezasTest, drop_O_X_reset){
   	}
 }
 
+TEST(PiezasTest, pieceAt_test1){
+	Piezas board;
+	Piece ret;
+	board.dropPiece(0); //Have to have X go first.
+	board.dropPiece(1);
+	board.dropPiece(2);
+	board.dropPiece(0);
+	ret = board.pieceAt(0,0);
+	ASSERT_EQ(ret, X);
+}
