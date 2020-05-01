@@ -23,5 +23,5 @@ TEST(PiezasTest, sanityCheck)
 
 TEST(PiezasTest, make_blank_00){
 	Piezas board;
-	board.pieceAt((0,0), Blank)
+	ASSERT_EQ(board.pieceAt(0,0), Blank);
 }
