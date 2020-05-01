@@ -97,28 +97,58 @@ Piece Piezas::gameState()
 {
   //Initialize max O, max X, current O, current X;
   int m_o, m_x, c_o, c_x = 0;
-fot(j,i){
-    if(board[i][j] == Blank){ return Invalid; }
-    else if(board[i][j] == O){
-      c_x = 0; c_o++; //reset and update.
-      if(c_o > m_o) { m_o = c_o; }
-    }
-    else{
-      c_x = 0; c_x++; //reset and update.
-      if(c_x > m_x) { m_x = c_x; }
-    }
-  }
 
-fot(j,i){
-    if(board[i][j] == O){
-      c_x = 0; c_o++;
-      if(c_o > m_o){ m_o = c_o; }
-    }
-    else{
-      c_o = 0; c_x++;
-      if(c_x > m_x){ m_x = c_x; }
+  //vertical check
+  fou(i,board[0]){
+    fou(j, board){
+      //The game isn't over if this first check finds a blank spot.
+      if(board[j][i] == Blank) { return Invalid; }
+      if(board[j][i] == 0){
+        c_x = 0; c_o++;
+        if(c_o > m_o) { m_o = c_o; }
+      }
+      else if(board[j][i] == X){
+        c_o = 0; c_x++;
+        if(c_x > m_x){ m_x = c_x; }
+      }
     }
   }
+  //horizontal check (? I think ? starting at 0, then going left to right.)
+  fou(i,board){
+    fou(j,board[i]){
+      if(board[i][j] == O){
+        c_x = 0; c_o++;
+        if(c_o > m_o) { m_o = c_o; }
+      }
+      else if(board[i][j] == X){
+        c_o = 0; c_x++;
+        if(c_x > m_x) { m_x = c_x; }
+      }
+    }
+  }
+// custom forloop may not work for setting board because of hardcoded values?
+// fot(j,i){
+//     if(board[i][j] == Blank){ return Invalid; }
+//     else if(board[i][j] == O){
+//       c_x = 0; c_o++; //reset and update.
+//       if(c_o > m_o) { m_o = c_o; }
+//     }
+//     else{
+//       c_x = 0; c_x++; //reset and update.
+//       if(c_x > m_x) { m_x = c_x; }
+//     }
+//   }
+
+// fot(j,i){
+//     if(board[i][j] == O){
+//       c_x = 0; c_o++;
+//       if(c_o > m_o){ m_o = c_o; }
+//     }
+//     else{
+//       c_o = 0; c_x++;
+//       if(c_x > m_x){ m_x = c_x; }
+//     }
+//   }
   if(m_x > m_o) { return X; }
   else if(m_x < m_o) { return O; }
   //Base case if m_x is not less than or greater than m_o then it has to be equal to.
