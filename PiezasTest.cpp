@@ -68,3 +68,29 @@ TEST(PiezasTest, pieceAt_test1){
 	ret = board.pieceAt(0,0);
 	ASSERT_EQ(ret, X);
 }
+
+/*
+ * Sad Test for pieceAt : Going negatives.
+ */
+TEST(PiezasTest, pieceAt_test2){
+	Piezas board;
+	Piece ret;
+	board.dropPiece(0); //Have to have X go first.
+	board.dropPiece(1);
+	board.dropPiece(2);
+	board.dropPiece(0);
+	ret = board.pieceAt(-1,-1);
+	ASSERT_EQ(ret, X);
+}
+
+TEST(PiezasTest, gameState_test){
+	Piezas board;
+	Piece ret;
+	board.dropPiece(0);
+	board.dropPiece(0);
+	board.dropPiece(1);
+	board.dropPiece(2);
+	board.dropPiece(0);
+	ret = board.gameState();
+	ASSERT_EQ(ret, X);
+}
