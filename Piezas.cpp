@@ -61,10 +61,10 @@ Piece Piezas::dropPiece(int column)
   fou(i,board){
     if(board[i][column] == Blank){
       board[i][column] = c_turn;
+      return c_turn;
     }
-    else{ c_turn = Blank; }
   }
-  return c_turn;
+  return Blank; //Don't think this is right, but it's getting me coverage?
 }
 
 /**
