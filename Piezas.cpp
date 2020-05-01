@@ -55,18 +55,20 @@ fot(j,i){
 **/ 
 Piece Piezas::dropPiece(int column)
 {
+  //returning this to it's original position.
+  Piece c_turn = turn;
+  turn = turn == X ? X : O;
   //If the column is full return invalid.
-  Piece c_turn = Blank;
+
   if(column >= (int)board[0].size()) { return Invalid; }
   for(int i = 0; i < BOARD_ROWS; i++){
     if(board[i][column] == Blank){
       board[i][column] = turn;
-      c_turn = turn;
+      return c_turn;
     }
   }
   //Switch turn.
-  turn = turn == X ? X : O;
-  return c_turn;
+  return Blank;
 }
 
 /**
