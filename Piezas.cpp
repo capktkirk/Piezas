@@ -1,5 +1,7 @@
 #include "Piezas.h"
 #include <vector>
+#define fou(i,j,k) for(int i = 0, int j = 0; i <(int)k.size(); i++)
+#define fou1(i,j) for(int i = 0; i < j.size(); i++)
 /** CLASS Piezas
  * Class for representing a Piezas vertical board, which is roughly based
  * on the game "Connect Four" where pieces are placed in a column and 
@@ -22,6 +24,14 @@
 **/
 Piezas::Piezas()
 {
+  board.resize(3); //3 rows
+  //If this doesn't work, do two nested for loops.
+  for(int i = 0, j = 0; j <= 3 && i <= 4; (i == 4) ? i = 0, j++ : i++){
+    if(i == 0){
+      board[j].resize(4);
+    }
+    board[i][j] = Blank;
+  }
 }
 
 /**
@@ -30,6 +40,10 @@ Piezas::Piezas()
 **/
 void Piezas::reset()
 {
+  for(int i = 0, j = 0; j <= 3 && i <= 4; (i == 4) ? i = 0, j++ : i++){
+    board[i][j] = Blank;
+  }
+
 }
 
 /**
@@ -42,7 +56,16 @@ void Piezas::reset()
 **/ 
 Piece Piezas::dropPiece(int column)
 {
-    return Blank;
+  Piece c_turn = turn;
+  turn = (turn == X) ? O : X;
+  if(column >= (int)board[0].size()) { return Invalid; }
+  fou1(i,board){
+    if(board[i][column] == Blank){
+      board[i][column] = c_turn;
+    }
+    else{ c_turn = Blank; }
+  }
+  return c_turn;
 }
 
 /**
@@ -51,7 +74,16 @@ Piece Piezas::dropPiece(int column)
 **/
 Piece Piezas::pieceAt(int row, int column)
 {
-    return Blank;
+  if(row >= (int)board.size()){
+    if(column >= (int)board[0].size()){
+      bool row_t = row < 0;
+      bool col_t = column < 0;
+      if(row_t || col_t){
+        return Invalid;
+      }
+    }
+  }
+  return board[row][column];
 }
 
 /**
@@ -65,5 +97,32 @@ Piece Piezas::pieceAt(int row, int column)
 **/
 Piece Piezas::gameState()
 {
-    return Blank;
+  //Initialize max O, max X, current O, current X;
+  int m_o, m_x, c_o, c_x = 0;
+  for(int i = 0, j = 0; j <= 3 && i <= 4; (i == 4) ? i = 0, j++ : i++){
+    if(board[i][j] == Blank){ return Invalid; }
+    else if(board[i][j] == O){
+      c_x = 0; c_o++; //reset and update.
+      if(c_o > m_o) { m_x = c_x; }
+    }
+    else{
+      c_o = O; c_x++; //reset and update.
+      if(c+x > m_x) { m_x = c_x; }
+    }
+  }
+
+  for(int i = 0, j = 0; j <= 3 && i <= 4; (i == 4) ? i = 0, j++ : i++){
+    if(board[i][j] == O){
+      c_x = 0; c_o++;
+      if(c_o > m_o){ m_o = c_o; }
+    }
+    else{
+      c_o = 0; c_x++;
+      if(c_x > m_x){ m_x = c_x; }
+    }
+  }
+
+  if(m_x == m_o){ return Blank; }
+  if(m_x > m_o) { return X; }
+  return O;
 }

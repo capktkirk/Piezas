@@ -1,4 +1,7 @@
 # Piezas
+## Badges :
+[![Build Status](https://travis-ci.com/capktkirk/Piezas.svg?branch=master)](https://travis-ci.com/capktkirk/Piezas)
+[![Coverage Status](https://coveralls.io/repos/github/capktkirk/Piezas/badge.svg?branch=master)](https://coveralls.io/github/capktkirk/Piezas?branch=master)
 
 ## Associated Enumerated Types
 `Piece` has four possible values: `X`,`O`,`Invalid`, and `Blank`
