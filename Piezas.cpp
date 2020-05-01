@@ -155,7 +155,7 @@ Piece Piezas::gameState()
 //     }
 //   }
   fot(i,j){
-    std::cout << "board[" << i << "][" << j << "]";
+    std::cout << "board[" << j << "][" << i << "] ";
   }
   std::cout << std::endl;
   for(int i = 0; i < BOARD_ROWS; i++){
