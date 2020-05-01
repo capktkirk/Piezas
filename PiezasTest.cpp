@@ -128,6 +128,6 @@ TEST(PiezasTest, gameState_test_tie){
 	fot(i,j){
 		std::cout << "[" << i << j << "][" << board.pieceAt(i,j) << "]";
 	}
-	std::cout << tsd::endl;
+	std::cout << std::endl;
 	ASSERT_EQ(ret, Blank);
 }

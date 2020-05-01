@@ -65,12 +65,7 @@ Piece Piezas::dropPiece(int column)
     }
   }
   //Switch turn.
-  if(turn == X){
-    turn = O;
-  }
-  else {
-    turn = X;
-  }
+  turn = turn == X ? X : O;
   return c_turn;
 }
 
