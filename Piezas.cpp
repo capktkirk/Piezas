@@ -59,7 +59,6 @@ Piece Piezas::dropPiece(int column)
   //returning this to it's original position.
   Piece c_turn = turn;
   turn = turn == X ? O : X;
-  std::cout << "turn == " << turn << std::endl;
   //If the column is full return invalid.
 
   if(column >= BOARD_COLS) { return Invalid; }
