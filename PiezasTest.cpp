@@ -119,6 +119,9 @@ TEST(PiezasTest, gameState_test_tie){
 	board.dropPiece(2);
 	board.dropPiece(0);
 	board.dropPiece(3);
+	fot(i,j){
+		std::cout << "board[" << i << "][" << j << "] ==" << board[i][j] << std::end;
+	}
 
 
 	ret = board.gameState();
