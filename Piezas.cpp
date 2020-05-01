@@ -109,11 +109,11 @@ Piece Piezas::gameState()
       //The game isn't over if this first check finds a blank spot.
       if(board[j][i] == Blank) { return Invalid; }
       if(board[j][i] == O){
-        c_x = 0; c_o++; std::cout << "board[" << j << "][" << i << "] vertical c_o++\n";
+        // c_x = 0; c_o++; std::cout << "board[" << j << "][" << i << "] vertical c_o++\n";
         if(c_o > m_o) { m_o = c_o; }
       }
       else if(board[j][i] == X){
-        c_o = 0; c_x++; std::cout << "board[" << j << "][" << i << "]  vertical c_x++\n";
+        // c_o = 0; c_x++; std::cout << "board[" << j << "][" << i << "]  vertical c_x++\n";
         if(c_x > m_x){ m_x = c_x; }
       }
     }
@@ -125,14 +125,14 @@ Piece Piezas::gameState()
   m_o = 0;
   fou(i,board){
     fou(j,board[i]){
-      std::cout << "board[" << i << "][" << j << "] ";
+      // std::cout << "board[" << i << "][" << j << "] ";
       if(j == 3){ std::cout << std::endl; }
       if(board[i][j] == O){
-        c_x = 0; c_o++; std::cout << "board[" << j << "][" << i << "] horizontal c_o++\n";
+        // c_x = 0; c_o++; std::cout << "board[" << j << "][" << i << "] horizontal c_o++\n";
         if(c_o > m_o) { m_o = c_o; }
       }
       else if(board[i][j] == X){
-        c_o = 0; c_x++; std::cout << "board[" << j << "][" << i << "] horizontal c_x++\n";
+        // c_o = 0; c_x++; std::cout << "board[" << j << "][" << i << "] horizontal c_x++\n";
         if(c_x > m_x) { m_x = c_x; }
       }
     }
@@ -141,17 +141,17 @@ Piece Piezas::gameState()
   if(temp_o > m_o){ m_o = temp_o; }
 // custom forloop may not work for setting board because of hardcoded values?
 
-  fot(i,j){
-    std::cout << "board[" << j << "][" << i << "] == " << board[j][i];
-    if(i == 3){
-      std::cout << std::endl;
-    }
-    else{
-      std::cout << " ";
-    }
-  }
-  std::cout << "m_x == " << m_x << std::endl;
-  std::cout << "m_o == " << m_o << std::endl;
+  // fot(i,j){
+  //   std::cout << "board[" << j << "][" << i << "] == " << board[j][i];
+  //   if(i == 3){
+  //     std::cout << std::endl;
+  //   }
+  //   else{
+  //     std::cout << " ";
+  //   }
+  // // }
+  // std::cout << "m_x == " << m_x << std::endl;
+  // std::cout << "m_o == " << m_o << std::endl;
   if(m_x == m_o) { return Blank; }
   if(m_x > m_o) { return X; }
   else if(m_x < m_o) { return O; }
