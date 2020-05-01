@@ -103,10 +103,10 @@ Piece Piezas::gameState()
     if(board[i][j] == Blank){ return Invalid; }
     else if(board[i][j] == O){
       c_x = 0; c_o++; //reset and update.
-      if(c_o > m_o) { m_x = c_x; }
+      if(c_o > m_o) { m_o = c_o; }
     }
     else{
-      c_o = O; c_x++; //reset and update.
+      c_x = 0; c_x++; //reset and update.
       if(c_x > m_x) { m_x = c_x; }
     }
   }
