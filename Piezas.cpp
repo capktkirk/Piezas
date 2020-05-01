@@ -56,7 +56,7 @@ fot(j,i){
 Piece Piezas::dropPiece(int column)
 {
   //If the column is full return invalid.
-  piece c_turn = Blank;
+  Piece c_turn = Blank;
   if(column >= (int)board[0].size()) { return Invalid; }
   for(int i = 0; i < BOARD_ROWS; i++){
     if(board[i][column] == Blank){
