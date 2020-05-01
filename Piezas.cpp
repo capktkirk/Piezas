@@ -101,7 +101,7 @@ Piece Piezas::pieceAt(int row, int column)
 Piece Piezas::gameState()
 {
   //Initialize max O, max X, current O, current X;
-  int m_o, m_x, c_o, c_x = 0;
+  int m_o = 0, m_x = 0, c_o = 0, c_x = 0;
 
   //vertical check
   fou(i,board[0]){
