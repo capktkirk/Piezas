@@ -56,7 +56,12 @@ fot(j,i){
 Piece Piezas::dropPiece(int column)
 {
   Piece c_turn = turn;
-  turn = (turn == X) ? O : X;
+  if(turn == X){
+    turn = O;
+  }
+  else {
+    turn = X;
+  }
   if(column >= (int)board[0].size()) { return Invalid; }
   fou(i,board){
     if(board[i][column] == Blank){
