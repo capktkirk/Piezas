@@ -163,13 +163,6 @@ Piece Piezas::gameState()
       std::cout << " ";
     }
   }
-  std::cout << std::endl;
-  for(int i = 0; i < BOARD_ROWS; i++){
-    for(int j = 0; j < BOARD_COLS; j++){
-      std::cout << "board[" << i << "][" << j << "] == " << board[j][i] << " ";
-    }
-    std::cout << std::endl;
-  }
   if(m_x == m_o) { return Blank; }
   if(m_x > m_o) { return X; }
   else if(m_x < m_o) { return O; }
