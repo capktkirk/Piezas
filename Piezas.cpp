@@ -125,7 +125,7 @@ Piece Piezas::gameState()
   m_o = 0;
   fou(i,board){
     fou(j,board[i]){
-      std::cout << "board[i][j] ";
+      std::cout << "board[" << i << "][" << j << "] ";
       if(board[i][j] == O){
         c_x = 0; c_o++;
         if(c_o > m_o) { m_o = c_o; }
