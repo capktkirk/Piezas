@@ -1,7 +1,7 @@
 #include "Piezas.h"
 #include <vector>
-#define fou(i,j,k) for(int i = 0, int j = 0; i <(int)k.size(); i++)
-#define fou1(i,j) for(int i = 0; i < (int)j.size(); i++)
+#define fou(i,j) for(int i = 0; i < (int)j.size(); i++)
+#define fot(i,j) for(int i = 0, j = 0; j <= 4 && i <= 3; (i == 3) ? i = 0, j++ : i++)
 /** CLASS Piezas
  * Class for representing a Piezas vertical board, which is roughly based
  * on the game "Connect Four" where pieces are placed in a column and 
@@ -26,7 +26,7 @@ Piezas::Piezas()
 {
   board.resize(3); //3 rows
   //If this doesn't work, do two nested for loops.
-  for(int i = 0, j = 0; j <= 3 && i <= 4; (i == 4) ? i = 0, j++ : i++){
+fot(i,j){
     if(i == 0){
       board[j].resize(4);
     }
@@ -40,7 +40,7 @@ Piezas::Piezas()
 **/
 void Piezas::reset()
 {
-  for(int i = 0, j = 0; j <= 3 && i <= 4; (i == 4) ? i = 0, j++ : i++){
+fot(i,j){
     board[i][j] = Blank;
   }
 
@@ -59,7 +59,7 @@ Piece Piezas::dropPiece(int column)
   Piece c_turn = turn;
   turn = (turn == X) ? O : X;
   if(column >= (int)board[0].size()) { return Invalid; }
-  fou1(i,board){
+  fou(i,board){
     if(board[i][column] == Blank){
       board[i][column] = c_turn;
     }
@@ -99,7 +99,7 @@ Piece Piezas::gameState()
 {
   //Initialize max O, max X, current O, current X;
   int m_o, m_x, c_o, c_x = 0;
-  for(int i = 0, j = 0; j <= 3 && i <= 4; (i == 4) ? i = 0, j++ : i++){
+fot(i,j){
     if(board[i][j] == Blank){ return Invalid; }
     else if(board[i][j] == O){
       c_x = 0; c_o++; //reset and update.
@@ -111,7 +111,7 @@ Piece Piezas::gameState()
     }
   }
 
-  for(int i = 0, j = 0; j <= 3 && i <= 4; (i == 4) ? i = 0, j++ : i++){
+fot(i,j){
     if(board[i][j] == O){
       c_x = 0; c_o++;
       if(c_o > m_o){ m_o = c_o; }
