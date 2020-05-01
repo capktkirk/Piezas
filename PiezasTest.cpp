@@ -50,7 +50,8 @@ TEST(PiezasTest, drop_O){
 //Test reset of the 
 TEST(PiezasTest, drop_O_X_reset){
 	Piezas board;
-	Piece ret = board.dropPiece(0);
+	Piece ret;
+	board.dropPiece(0);
   	ret = board.dropPiece(1);
   	board.reset();
   	fot(j, i){
@@ -97,6 +98,9 @@ TEST(PiezasTest, gameState_test){
 
 
 TEST(PiezasTest, gameState_test_tie){
+ //* [2,0][2,1][2,2][2,3]
+ //* [1,0][1,1][1,2][1,3]
+ //* [0,0][0,1][0,2][0,3]
 	Piezas board;
 	Piece ret;
 	board.dropPiece(0);
