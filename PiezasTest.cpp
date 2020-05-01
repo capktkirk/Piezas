@@ -41,7 +41,8 @@ TEST(PiezasTest, drop_X){
 //Test singular O
 TEST(PiezasTest, drop_O){
 	Piezas board;
-	Piece ret = board.dropPiece(0);
+	Piece ret;
+	ret = board.dropPiece(0);
   	ASSERT_EQ(ret, O);
 }
 //Test reset of the 
