@@ -3,6 +3,7 @@
 **/
 
 #include <gtest/gtest.h>
+#include <iostream>
 #include "Piezas.h"
 #define fot(i,j) for(int i = 0, j = 0; j < BOARD_ROWS && i < BOARD_COLS; (i == BOARD_ROWS) ? i = 0, j++ : i++)
  
@@ -117,6 +118,6 @@ TEST(PiezasTest, gameState_test_tie){
 	board.dropPiece(3);
 
 	ret = board.gameState();
-	cout << "ret == " << ret << endl;
+	std::cout << "ret == " << ret << endl;
 	ASSERT_EQ(ret, Blank);
 }
