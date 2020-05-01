@@ -163,6 +163,8 @@ Piece Piezas::gameState()
       std::cout << " ";
     }
   }
+  std::cout << "m_x == " << m_x << std::endl;
+  std::cout << "m_o == " << m_o << std::endl;
   if(m_x == m_o) { return Blank; }
   if(m_x > m_o) { return X; }
   else if(m_x < m_o) { return O; }
