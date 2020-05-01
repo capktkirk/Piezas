@@ -1,7 +1,7 @@
 #include "Piezas.h"
 #include <vector>
 #define fou(i,j) for(int i = 0; i < (int)j.size(); i++)
-#define fot(i,j) for(int i = 0, j = 0; j <= 3 && i <= 4; (i == 4) ? i = 0, j++ : i++)
+#define fot(i,j) for(int i = 0, j = 0; j < 3 && i < 4; (i == 3) ? i = 0, j++ : i++)
 /** CLASS Piezas
  * Class for representing a Piezas vertical board, which is roughly based
  * on the game "Connect Four" where pieces are placed in a column and 
@@ -28,10 +28,9 @@ Piezas::Piezas()
   board.resize(3); //3 rows
   //If this doesn't work, do two nested for loops.
   for(int i = 0; i < 4; i++){ board[i].resize(4); }
-  // fot(j,i){
-    
-  //   board[i][j] = Blank;
-  // }
+  fot(j,i){
+    board[i][j] = Blank;
+  }
 }
 
 /**
