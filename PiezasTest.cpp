@@ -49,7 +49,7 @@ TEST(PiezasTest, drop_O_X_reset){
 	Piezas board;
 	Piece ret = board.dropPiece(0);
   	ret = board.dropPiece(1);
-  	board.reset;
+  	board.reset();
   	fot(j, i){
   		ASSERT_EQ(board.pieceAt(i,j), Blank);
   	}
