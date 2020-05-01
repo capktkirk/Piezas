@@ -25,7 +25,7 @@ TEST(PiezasTest, make_blank){
 	Piezas board;
 	for(int i = 0; i < 3; i++){
 		for(int j = 0; j < 4; j++){
-			ASSERT_EQ(baord.pieceAt(i,j), Blank);
+			ASSERT_EQ(board.pieceAt(i,j), Blank);
 		}
 	}
 }
