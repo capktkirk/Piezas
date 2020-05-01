@@ -108,7 +108,7 @@ Piece Piezas::gameState()
     fou(j, board){
       //The game isn't over if this first check finds a blank spot.
       if(board[j][i] == Blank) { return Invalid; }
-      if(board[j][i] == 0){
+      if(board[j][i] == O){
         c_x = 0; c_o++;
         if(c_o > m_o) { m_o = c_o; }
       }
