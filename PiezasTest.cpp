@@ -80,7 +80,7 @@ TEST(PiezasTest, pieceAt_test2){
 	board.dropPiece(2);
 	board.dropPiece(0);
 	ret = board.pieceAt(-1,-1);
-	ASSERT_EQ(ret, X);
+	ASSERT_EQ(ret, Invalid);
 }
 
 TEST(PiezasTest, gameState_test){
@@ -92,5 +92,5 @@ TEST(PiezasTest, gameState_test){
 	board.dropPiece(2);
 	board.dropPiece(0);
 	ret = board.gameState();
-	ASSERT_EQ(ret, X);
+	ASSERT_EQ(ret, Invalid);
 }
