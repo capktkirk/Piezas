@@ -1,5 +1,6 @@
 #include "Piezas.h"
 #include <vector>
+#include <iostream>
 #define fou(i,j) for(int i = 0; i < (int)j.size(); i++)
 #define fot(i,j) for(int i = 0, j = 0; j < 3 && i < 4; (i == 3) ? i = 0, j++ : i++)
 /** CLASS Piezas
