@@ -1,7 +1,7 @@
 #include "Piezas.h"
 #include <vector>
 #define fou(i,j,k) for(int i = 0, int j = 0; i <(int)k.size(); i++)
-#define fou1(i,j) for(int i = 0; i < j.size(); i++)
+#define fou1(i,j) for(int i = 0; i < (int)j.size(); i++)
 /** CLASS Piezas
  * Class for representing a Piezas vertical board, which is roughly based
  * on the game "Connect Four" where pieces are placed in a column and 
@@ -107,7 +107,7 @@ Piece Piezas::gameState()
     }
     else{
       c_o = O; c_x++; //reset and update.
-      if(c+x > m_x) { m_x = c_x; }
+      if(c_x > m_x) { m_x = c_x; }
     }
   }
 
