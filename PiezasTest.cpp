@@ -117,5 +117,6 @@ TEST(PiezasTest, gameState_test_tie){
 	board.dropPiece(3);
 
 	ret = board.gameState();
+	cout << "ret == " << ret << endl;
 	ASSERT_EQ(ret, Blank);
 }

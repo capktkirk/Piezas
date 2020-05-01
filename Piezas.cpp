@@ -122,5 +122,6 @@ fot(j,i){
 
   if(m_x == m_o){ return Blank; }
   if(m_x > m_o) { return X; }
-  return O;
+  else(m_x < m_o) { return O; }
+  return Blank; //I think I need a return at base level for full coverage or to remove warnings.
 }
