@@ -144,8 +144,8 @@ TEST(PiezasTest, gameState_test_x){
 	board.dropPiece(3);
 	board.dropPiece(3);
 	board.dropPiece(2);
-	board.dropPiece(0);
 	board.dropPiece(3);
+	board.dropPiece(0);
 
 
 	ret = board.gameState();

@@ -113,7 +113,7 @@ Piece Piezas::gameState()
         if(c_o > m_o) { m_o = c_o; }
       }
       else if(board[j][i] == X){
-        c_o = 0; c_x++; std::cout << "vertical c_x\n";
+        c_o = 0; c_x++; std::cout << "vertical c_x++\n";
         if(c_x > m_x){ m_x = c_x; }
       }
     }
