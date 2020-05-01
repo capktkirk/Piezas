@@ -4,7 +4,7 @@
 
 #include <gtest/gtest.h>
 #include "Piezas.h"
-#define fot(i,j) for(int i = 0, j = 0; j <= 4 && i <= 3; (i == 3) ? i = 0, j++ : i++)
+#define fot(i,j) for(int i = 0, j = 0; j < 3 && i < 4; (i == 3) ? i = 0, j++ : i++)
  
 class PiezasTest : public ::testing::Test
 {
@@ -24,4 +24,11 @@ TEST(PiezasTest, sanityCheck)
 TEST(PiezasTest, constructor_test){
 	Piezas board;
 	ASSERT_TRUE(true);
+}
+
+TEST(PiezasTest, blank_test){
+	Piezas board;
+	fot(j, i){
+		ASSERT_EQ(board.pieceAt(i,j), Blank);
+	}
 }
