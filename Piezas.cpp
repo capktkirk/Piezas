@@ -55,11 +55,10 @@ fot(j,i){
 **/ 
 Piece Piezas::dropPiece(int column)
 {
-  Piece c_turn = turn;
   if(column >= (int)board[0].size()) { return Invalid; }
   fou(i,board){
     if(board[i][column] == Blank){
-      board[i][column] = c_turn;
+      board[i][column] = turn;
     }
   }
   if(turn == X){
