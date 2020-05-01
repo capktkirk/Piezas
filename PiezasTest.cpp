@@ -113,9 +113,13 @@ TEST(PiezasTest, gameState_test_tie){
 	board.dropPiece(3);
 	board.dropPiece(3);
 	board.dropPiece(0);
+	board.dropPiece(0);
 	board.dropPiece(1);
+	board.dropPiece(0);
 	board.dropPiece(2);
+	board.dropPiece(0);
 	board.dropPiece(3);
+
 
 	ret = board.gameState();
 	ASSERT_EQ(ret, Blank);
