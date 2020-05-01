@@ -98,7 +98,7 @@ TEST(PiezasTest, gameState_test){
 }
 
 
-TEST(PiezasTest, gameState_test_tie){
+TEST(PiezasTest, gameState_test_x){
  //* [2,0][2,1][2,2][2,3]
  //* [1,0][1,1][1,2][1,3]
  //* [0,0][0,1][0,2][0,3]
@@ -122,7 +122,7 @@ TEST(PiezasTest, gameState_test_tie){
 
 
 	ret = board.gameState();
-	ASSERT_EQ(ret, Blank);
+	ASSERT_EQ(ret, X);
 }
 
 TEST(PiezasTest, gameState_test_tie){
