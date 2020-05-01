@@ -26,7 +26,7 @@ Piezas::Piezas()
 {
   board.resize(3); //3 rows
   //If this doesn't work, do two nested for loops.
-fot(i,j){
+fot(j,i){
     if(i == 0){
       board[j].resize(4);
     }
@@ -40,7 +40,7 @@ fot(i,j){
 **/
 void Piezas::reset()
 {
-fot(i,j){
+fot(j,i){
     board[i][j] = Blank;
   }
 
@@ -99,7 +99,7 @@ Piece Piezas::gameState()
 {
   //Initialize max O, max X, current O, current X;
   int m_o, m_x, c_o, c_x = 0;
-fot(i,j){
+fot(j,i){
     if(board[i][j] == Blank){ return Invalid; }
     else if(board[i][j] == O){
       c_x = 0; c_o++; //reset and update.
@@ -111,7 +111,7 @@ fot(i,j){
     }
   }
 
-fot(i,j){
+fot(j,i){
     if(board[i][j] == O){
       c_x = 0; c_o++;
       if(c_o > m_o){ m_o = c_o; }
