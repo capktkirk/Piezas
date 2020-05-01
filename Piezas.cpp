@@ -26,10 +26,8 @@ Piezas::Piezas()
 {
   board.resize(3); //3 rows
   //If this doesn't work, do two nested for loops.
-fot(j,i){
-    if(i == 0){
-      board[j].resize(4);
-    }
+  for(int i = 0; i < 4; i++){ board[i].resize(4); }
+  fot(j,i){
     board[i][j] = Blank;
   }
 }
