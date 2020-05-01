@@ -119,6 +119,10 @@ Piece Piezas::gameState()
     }
   }
   //horizontal check (? I think ? starting at 0, then going left to right.)
+  int temp_x = m_x;
+  int temp_o = m_o;
+  m_x = 0;
+  m_o = 0;
   fou(i,board){
     fou(j,board[i]){
       if(board[i][j] == O){
@@ -131,6 +135,8 @@ Piece Piezas::gameState()
       }
     }
   }
+  if(temp_x > m_x){ m_x = temp_x; }
+  if(temp_o > m_o){ m_o = temp_o; }
 // custom forloop may not work for setting board because of hardcoded values?
 
   fot(i,j){
