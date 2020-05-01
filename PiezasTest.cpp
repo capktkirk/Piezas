@@ -35,13 +35,15 @@ TEST(PiezasTest, blank_test){
 //Test singular X
 TEST(PiezasTest, drop_X){
 	Piezas board;
-	Piece ret = board.dropPiece(0);
+	Piece ret;
+	ret = board.dropPiece(0);
   	ASSERT_EQ(ret, X);
 }
 //Test singular O
 TEST(PiezasTest, drop_O){
 	Piezas board;
 	Piece ret;
+	board.dropPiece(0); //Have to have X go first.
 	ret = board.dropPiece(0);
   	ASSERT_EQ(ret, O);
 }
