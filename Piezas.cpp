@@ -119,9 +119,8 @@ fot(j,i){
       if(c_x > m_x){ m_x = c_x; }
     }
   }
-
-  if(m_x == m_o){ return Blank; }
   if(m_x > m_o) { return X; }
-  else(m_x < m_o) { return O; }
+  else if(m_x < m_o) { return O; }
+  //Base case if m_x is not less than or greater than m_o then it has to be equal to.
   return Blank; //I think I need a return at base level for full coverage or to remove warnings.
 }
