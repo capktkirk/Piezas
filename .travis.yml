@@ -16,7 +16,7 @@ before_install:
 script:
   - make clean
   - make
-  - valgrind ./PiezasTest
+  - ./PiezasTest
 
 after_success:
   - coveralls --exclude *Test.cpp --exclude gtest/ --gcov-options '\-lpbc'
