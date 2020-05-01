@@ -122,7 +122,7 @@ TEST(PiezasTest, gameState_test_tie){
 	fot(i,j){
 		Piece temp;
 		temp = board.pieceAt(i,j);
-		std::cout << "board[" << i << "][" << j << "] ==" << temp << std::end;
+		std::cout << "board[" << i << "][" << j << "] ==" << (int)temp << std::end;
 	}
 
 
