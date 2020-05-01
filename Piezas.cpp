@@ -141,17 +141,17 @@ Piece Piezas::gameState()
   if(temp_o > m_o){ m_o = temp_o; }
 // custom forloop may not work for setting board because of hardcoded values?
 
-  // fot(i,j){
-  //   std::cout << "board[" << j << "][" << i << "] == " << board[j][i];
-  //   if(i == 3){
-  //     std::cout << std::endl;
-  //   }
-  //   else{
-  //     std::cout << " ";
-  //   }
-  // }
-  // std::cout << "m_x == " << m_x << std::endl;
-  // std::cout << "m_o == " << m_o << std::endl;
+  fot(i,j){
+    std::cout << "board[" << j << "][" << i << "] == " << board[j][i];
+    if(i == 3){
+      std::cout << std::endl;
+    }
+    else{
+      std::cout << " ";
+    }
+  }
+  std::cout << "m_x == " << m_x << std::endl;
+  std::cout << "m_o == " << m_o << std::endl;
   if(m_x == m_o) { return Blank; }
   if(m_x > m_o) { return X; }
   else if(m_x < m_o) { return O; }
