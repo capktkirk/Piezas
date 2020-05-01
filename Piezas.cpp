@@ -60,14 +60,13 @@ Piece Piezas::dropPiece(int column)
   turn = turn == X ? X : O;
   //If the column is full return invalid.
 
-  if(column >= (int)board[0].size()) { return Invalid; }
+  if(column >= BOARD_COLS) { return Invalid; }
   for(int i = 0; i < BOARD_ROWS; i++){
     if(board[i][column] == Blank){
       board[i][column] = turn;
       return c_turn;
     }
   }
-  //Switch turn.
   return Blank;
 }
 
