@@ -24,6 +24,7 @@
 **/
 Piezas::Piezas()
 {
+  turn = X;
   board.resize(3); //3 rows
   //If this doesn't work, do two nested for loops.
   for(int i = 0; i < 4; i++){ board[i].resize(4); }

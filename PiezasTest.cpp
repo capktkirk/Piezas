@@ -21,11 +21,7 @@ TEST(PiezasTest, sanityCheck)
 }
 //Constructor Test
 
-TEST(PiezasTest, make_blank){
+TEST(PiezasTest, make_blank_00){
 	Piezas board;
-	for(int i = 0; i < 3; i++){
-		for(int j = 0; j < 4; j++){
-			ASSERT_EQ(board.pieceAt(i,j), Blank);
-		}
-	}
+	board.pieceAt((0,0), Blank)
 }
