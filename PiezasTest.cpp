@@ -32,3 +32,9 @@ TEST(PiezasTest, blank_test){
 		ASSERT_EQ(board.pieceAt(i,j), Blank);
 	}
 }
+
+TEST(PiezasTest, drop_X){
+	Piezas board;
+	Piece ret = board.dropPiece(0);
+  	ASSERT_EQ(ret, X);
+}
