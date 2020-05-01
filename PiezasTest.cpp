@@ -119,6 +119,7 @@ TEST(PiezasTest, gameState_test_tie){
 
 	ret = board.gameState();
 	std::cout << "ret == " << ret << std::endl;
+	std::cout << "rows == " << BOARD_ROWS << "\ncolumns == " << BOARD_COLS << std::endl;
 	for(int i = 0; i < BOARD_ROWS; i++){
 		for(int j = 0; j < BOARD_COLS; j++){
 			std::cout << "[" << i << j << "][" << board.pieceAt(i,j) << "] ";
